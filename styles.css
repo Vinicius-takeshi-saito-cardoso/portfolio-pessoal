@@ -514,6 +514,8 @@ a {
   background: var(--surface);
   color: var(--ink);
   font-weight: 800;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .contact-form {
