@@ -50,9 +50,7 @@ body {
 }
 
 body,
-button,
-input,
-textarea {
+button {
   font: inherit;
 }
 
@@ -324,8 +322,7 @@ a {
 }
 
 .skill-card,
-.project-card,
-.contact-form {
+.project-card {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
@@ -491,10 +488,7 @@ a {
 }
 
 .contact-section {
-  display: grid;
-  grid-template-columns: minmax(280px, 0.8fr) minmax(320px, 0.7fr);
-  gap: clamp(28px, 6vw, 86px);
-  align-items: start;
+  background: var(--surface);
 }
 
 .contact-copy p {
@@ -518,41 +512,6 @@ a {
   overflow-wrap: anywhere;
 }
 
-.contact-form {
-  display: grid;
-  gap: 10px;
-  padding: 24px;
-}
-
-.contact-form label {
-  color: var(--ink);
-  font-size: 0.92rem;
-  font-weight: 800;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--surface-strong);
-  color: var(--ink);
-  padding: 12px 14px;
-  outline: none;
-  resize: vertical;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary), transparent 82%);
-}
-
-.contact-form button {
-  margin-top: 10px;
-  cursor: pointer;
-}
-
 .site-footer {
   display: flex;
   flex-wrap: wrap;
@@ -571,8 +530,7 @@ a {
 
 @media (max-width: 1020px) {
   .hero,
-  .intro-band,
-  .contact-section {
+  .intro-band {
     grid-template-columns: 1fr;
   }
 

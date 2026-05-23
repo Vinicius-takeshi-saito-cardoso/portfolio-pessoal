@@ -3,7 +3,6 @@ const themeToggle = document.querySelector(".theme-toggle");
 const currentYear = document.querySelector("#current-year");
 const filterButtons = document.querySelectorAll(".filter-button");
 const projectCards = document.querySelectorAll(".project-card");
-const contactForm = document.querySelector("#contact-form");
 
 const savedTheme = localStorage.getItem("portfolio-theme");
 
@@ -32,23 +31,4 @@ filterButtons.forEach((button) => {
       card.classList.toggle("hidden", !shouldShow);
     });
   });
-});
-
-contactForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  const formData = new FormData(contactForm);
-  const name = formData.get("name").trim();
-  const email = formData.get("email").trim();
-  const message = formData.get("message").trim();
-
-  if (!name || !email || !message) {
-    return;
-  }
-
-  const subject = encodeURIComponent(`Contato pelo portfólio - ${name}`);
-  const body = encodeURIComponent(`${message}\n\nEmail para retorno: ${email}`);
-
-  window.location.href = `mailto:viniciustsc2005@gmail.com?subject=${subject}&body=${body}`;
-  contactForm.reset();
 });
