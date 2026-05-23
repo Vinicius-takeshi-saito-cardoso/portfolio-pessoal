@@ -4,7 +4,6 @@ const currentYear = document.querySelector("#current-year");
 const filterButtons = document.querySelectorAll(".filter-button");
 const projectCards = document.querySelectorAll(".project-card");
 const contactForm = document.querySelector("#contact-form");
-const formStatus = document.querySelector("#form-status");
 
 const savedTheme = localStorage.getItem("portfolio-theme");
 
@@ -44,7 +43,6 @@ contactForm.addEventListener("submit", (event) => {
   const message = formData.get("message").trim();
 
   if (!name || !email || !message) {
-    formStatus.textContent = "Preencha todos os campos antes de enviar.";
     return;
   }
 
@@ -52,6 +50,5 @@ contactForm.addEventListener("submit", (event) => {
   const body = encodeURIComponent(`${message}\n\nEmail para retorno: ${email}`);
 
   window.location.href = `mailto:viniciustsc2005@gmail.com?subject=${subject}&body=${body}`;
-  formStatus.textContent = "Abrindo seu aplicativo de email...";
   contactForm.reset();
 });
