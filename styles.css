@@ -488,11 +488,118 @@ a {
 }
 
 .contact-section {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.85fr) minmax(320px, 0.65fr);
+  gap: clamp(28px, 6vw, 86px);
+  align-items: center;
   background: var(--surface);
 }
 
 .contact-copy p {
   max-width: 58ch;
+}
+
+.contact-visual {
+  position: relative;
+  min-height: 360px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--mint), transparent 8%), transparent 68%),
+    var(--surface-strong);
+  padding: clamp(22px, 4vw, 36px);
+  box-shadow: var(--shadow);
+}
+
+.contact-orbit {
+  position: absolute;
+  inset: 26px;
+  border: 1px solid color-mix(in srgb, var(--primary), transparent 68%);
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.contact-orbit span {
+  position: absolute;
+  display: block;
+  border-radius: 8px;
+  background: var(--primary);
+}
+
+.contact-orbit span:nth-child(1) {
+  width: 72px;
+  height: 12px;
+  top: 42px;
+  right: 38px;
+}
+
+.contact-orbit span:nth-child(2) {
+  width: 12px;
+  height: 72px;
+  right: 68px;
+  bottom: 54px;
+  background: var(--accent);
+}
+
+.contact-orbit span:nth-child(3) {
+  width: 54px;
+  height: 54px;
+  left: 44px;
+  bottom: 46px;
+  background: var(--gold);
+}
+
+.availability-card {
+  position: relative;
+  max-width: 360px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--surface), transparent 4%);
+  padding: 24px;
+}
+
+.availability-label {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.availability-card h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  line-height: 1.04;
+}
+
+.availability-card p:last-child {
+  margin: 14px 0 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.focus-list {
+  position: absolute;
+  right: clamp(20px, 4vw, 34px);
+  bottom: clamp(20px, 4vw, 34px);
+  display: flex;
+  max-width: 260px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.focus-list span {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  padding: 8px 10px;
+  font-size: 0.82rem;
+  font-weight: 900;
 }
 
 .social-links {
@@ -530,7 +637,8 @@ a {
 
 @media (max-width: 1020px) {
   .hero,
-  .intro-band {
+  .intro-band,
+  .contact-section {
     grid-template-columns: 1fr;
   }
 
@@ -544,6 +652,17 @@ a {
 
   .skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .contact-visual {
+    min-height: 420px;
+  }
+
+  .focus-list {
+    left: 22px;
+    justify-content: flex-start;
   }
 }
 
